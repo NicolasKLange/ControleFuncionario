@@ -41,62 +41,26 @@ public class Departamento {
 //	LISTAR DEPARTAMENTOS CADASTRADOS
 	public List<Departamento> listarDeptos() throws ClassNotFoundException{
 		
-//		CRIANDO LISTA 	
 		List<Departamento> listaDepto = new ArrayList<>();
-		
-//		INSTANCIAR CLASSE CONEXAO 
 		Connection con = Conexao.conectar();
-		
-//		COMANDO PARA LISTAR DEPARTAMENTOS
-		String sql = "SELECT idDepto, descDepto FROM departamento ORDER BY idDepto";
+		String sql = "SELECT iddepto, descDepto FROM departamento ORDER BY idDepto";
 		try {
 			PreparedStatement stm = con.prepareStatement(sql);
 			ResultSet rs = stm.executeQuery();
-//			WHILE PARA FAZER A LISTAGEM DE TODOS OS DEPARTAMENTOS
 			while (rs.next()) {
-//				INSTANCIAR CLASSE DEPARTAMENTO 
 				Departamento dep = new Departamento();
 				dep.setIdDepto(rs.getInt("idDepto"));
 				dep.setDescDepto(rs.getString("descDepto"));
-				listaDepto.add(dep);
 			}
 		} catch (SQLException e) {
 			System.out.println("Erro em listar departamentos");
 			return null;
 		}
-//		RETORNA A LISTA DOS DEPARTAMENTOS
 		return listaDepto;
 	
 	}
 	
-/*	
-  	LISTAR UM DEPARTAMENTO CADASTRADO 
- */
-	public Departamento consultaDepto() throws ClassNotFoundException{
-		
-//		CRIANDO LISTA 	
-		Departamento dep1 = new Departamento();
-		dep1 = null;
-				
-//		INSTANCIAR CLASSE CONEXAO 
-		Connection con = Conexao.conectar();
-		
-//		COMANDO PARA LISTAR DEPARTAMENTOS
-		String sql = "SELECT descDepto FROM departamento where idDepto = ?";
-		try {
-			PreparedStatement stm = con.prepareStatement(sql);
-			stm.setInt(1, this.getIdDepto());
-			ResultSet rs = stm.executeQuery();
-			if (rs.next()) {
-				dep1.setDescDepto(rs.getString("descDepto"));
-			}
-		} catch (SQLException e) {
-			System.out.println("Erro na consulta do departamento");
-			return null;
-		}
-		return dep1;
 	
-	}
 	
 	
 //	ÁREA DE GETTERS E SETTERS

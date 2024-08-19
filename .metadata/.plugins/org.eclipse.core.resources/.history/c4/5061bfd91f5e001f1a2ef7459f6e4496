@@ -32,30 +32,16 @@ public class Principal {
 	        } else {
 	        	System.out.println("Erro na inclusão do departamento!!");
 	        }     
+	        */
 	        
-	        
-//	        LISTAR TODOS DEPARTAMENTOS
+//	        LISTAR DEPARTAMENTOS
 	        List<Departamento> lista = new ArrayList<>();
 	        lista = dep1.listarDeptos();
-//	        FOR PARA LISTAR TODOS DEPARTAMENTOS CADASTRADOS
+	        
 	        for (Departamento d : lista) {
-//	        	IF PARA DEIXAR A LISTA MAIS BONITA
-	        	if (d.getIdDepto() < 10) {
-	        		System.out.println("Departamto: 0" + d.getIdDepto() + " | " + d.getDescDepto());
-				} else {
-					System.out.println("Departamto: " + d.getIdDepto() + " | " + d.getDescDepto());
-				}
-	        	
-	        	
+	        	System.out.print("Departamto: " + d.getIdDepto());
+	        	System.out.println("Descrição.: " + d.getDescDepto());
 	        }
-	        */
-//	        LISTAR UM DEPARTAMENTO
-	    	dep1.setIdDepto(Integer.parseInt(JOptionPane.showInputDialog("Informe o ID do departamento")));
-	    	if (dep1.consultaDepto() == null) {
-	    		System.out.println("Não encontrei o departamento");
-	    	} else {
-	    		System.out.println("Departamento " + dep1.getIdDepto() + " | " + dep1.getDescDepto());
-	    	}
 	    }
 
 	}

@@ -72,32 +72,31 @@ public class Departamento {
 /*	
   	LISTAR UM DEPARTAMENTO CADASTRADO 
  */
-	public Departamento consultaDepto() throws ClassNotFoundException{
-		
-//		CRIANDO LISTA 	
-		Departamento dep1 = new Departamento();
-		dep1 = null;
-				
-//		INSTANCIAR CLASSE CONEXAO 
-		Connection con = Conexao.conectar();
-		
-//		COMANDO PARA LISTAR DEPARTAMENTOS
-		String sql = "SELECT descDepto FROM departamento where idDepto = ?";
-		try {
-			PreparedStatement stm = con.prepareStatement(sql);
-			stm.setInt(1, this.getIdDepto());
-			ResultSet rs = stm.executeQuery();
-			if (rs.next()) {
-				dep1.setDescDepto(rs.getString("descDepto"));
-			}
-		} catch (SQLException e) {
-			System.out.println("Erro na consulta do departamento");
-			return null;
-		}
-		return dep1;
-	
+	public Departamento consultaDepto() throws ClassNotFoundException {
+	    // INSTANCIAR CLASSE CONEXAO 
+	    Connection con = Conexao.conectar();
+	    
+	    // CRIANDO UMA INSTÂNCIA DO DEPARTAMENTO
+	    Departamento dep1 = new Departamento();
+	    
+	    // COMANDO PARA CONSULTAR DEPARTAMENTO
+	    String sql = "SELECT descDepto FROM departamento WHERE idDepto = ?";
+	    try {
+	        PreparedStatement stm = con.prepareStatement(sql);
+	        stm.setInt(1, this.getIdDepto());
+	        ResultSet rs = stm.executeQuery();
+	        if (rs.next()) {
+	            dep1.setDescDepto(rs.getString("descDepto"));
+	        } else {
+	            // Se o departamento não for encontrado, dep1 deve ser null
+	            dep1 = null;
+	        }
+	    } catch (SQLException e) {
+	        System.out.println("Erro na consulta do departamento");
+	        return null;
+	    }
+	    return dep1;
 	}
-	
 	
 //	ÁREA DE GETTERS E SETTERS
 	public int getIdDepto() {

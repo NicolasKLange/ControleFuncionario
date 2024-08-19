@@ -69,34 +69,7 @@ public class Departamento {
 	
 	}
 	
-/*	
-  	LISTAR UM DEPARTAMENTO CADASTRADO 
- */
-	public Departamento consultaDepto() throws ClassNotFoundException{
-		
-//		CRIANDO LISTA 	
-		Departamento dep1 = new Departamento();
-		dep1 = null;
-				
-//		INSTANCIAR CLASSE CONEXAO 
-		Connection con = Conexao.conectar();
-		
-//		COMANDO PARA LISTAR DEPARTAMENTOS
-		String sql = "SELECT descDepto FROM departamento where idDepto = ?";
-		try {
-			PreparedStatement stm = con.prepareStatement(sql);
-			stm.setInt(1, this.getIdDepto());
-			ResultSet rs = stm.executeQuery();
-			if (rs.next()) {
-				dep1.setDescDepto(rs.getString("descDepto"));
-			}
-		} catch (SQLException e) {
-			System.out.println("Erro na consulta do departamento");
-			return null;
-		}
-		return dep1;
 	
-	}
 	
 	
 //	ÁREA DE GETTERS E SETTERS

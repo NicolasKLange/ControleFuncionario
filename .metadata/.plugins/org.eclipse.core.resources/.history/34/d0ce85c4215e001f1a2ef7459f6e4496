@@ -76,7 +76,7 @@ public class Departamento {
 		
 //		CRIANDO LISTA 	
 		Departamento dep1 = new Departamento();
-		dep1 = null;
+		
 				
 //		INSTANCIAR CLASSE CONEXAO 
 		Connection con = Conexao.conectar();

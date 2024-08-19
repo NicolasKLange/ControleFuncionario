@@ -13,6 +13,7 @@ import utils.Conexao;
 public class Departamento {
 	private int    idDepto;
 	private String descDepto;
+	private Departamento dep1;
 	
 	
 //	CLASSE PARA INCLUIR DEPARTAMENTO
@@ -74,8 +75,7 @@ public class Departamento {
  */
 	public Departamento consultaDepto() throws ClassNotFoundException{
 		
-//		CRIANDO LISTA 	
-		Departamento dep1 = new Departamento();
+dep1 = new Departamento();
 		dep1 = null;
 				
 //		INSTANCIAR CLASSE CONEXAO 

@@ -75,8 +75,8 @@ public class Departamento {
 	public Departamento consultaDepto() throws ClassNotFoundException{
 		
 //		CRIANDO LISTA 	
-		Departamento dep1 = new Departamento();
-		dep1 = null;
+		Departamento dep = new Departamento();
+		
 				
 //		INSTANCIAR CLASSE CONEXAO 
 		Connection con = Conexao.conectar();
@@ -88,13 +88,13 @@ public class Departamento {
 			stm.setInt(1, this.getIdDepto());
 			ResultSet rs = stm.executeQuery();
 			if (rs.next()) {
-				dep1.setDescDepto(rs.getString("descDepto"));
+				dep.setDescDepto(rs.getString("descDepto"));
 			}
 		} catch (SQLException e) {
 			System.out.println("Erro na consulta do departamento");
 			return null;
 		}
-		return dep1;
+		return dep;
 	
 	}
 	

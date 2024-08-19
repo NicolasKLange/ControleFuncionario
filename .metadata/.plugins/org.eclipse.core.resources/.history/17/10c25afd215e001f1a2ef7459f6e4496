@@ -75,7 +75,7 @@ public class Departamento {
 	public Departamento consultaDepto() throws ClassNotFoundException{
 		
 //		CRIANDO LISTA 	
-		Departamento dep1 = new Departamento();
+		var dep1 = new Departamento();
 		dep1 = null;
 				
 //		INSTANCIAR CLASSE CONEXAO 
