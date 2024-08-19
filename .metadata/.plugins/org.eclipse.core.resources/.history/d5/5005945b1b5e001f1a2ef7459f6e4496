@@ -17,7 +17,7 @@ public class Departamento {
 			   sql += "VALUES (?)";
 			   
 		Connection con = null;	
-		     
+		
 		con = Conexao.conectar();
 		
 		try {

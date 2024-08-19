@@ -27,7 +27,7 @@ public class Principal {
 	        	System.out.println("Inclusão do departamento feito com sucesso!!");
 	        } else {
 	        	System.out.println("Erro na inclusão do departamento!!");
-	        }     
+	        }
 	        
 	    }
 
