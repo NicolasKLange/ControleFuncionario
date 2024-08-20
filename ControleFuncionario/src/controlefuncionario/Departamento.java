@@ -15,15 +15,15 @@ public class Departamento {
 	private String descDepto;
 	
 	
-//	CLASSE PARA INCLUIR DEPARTAMENTO
+/*
+ 	CLASSE PARA INCLUIR DEPARTAMENTO
+ */
 	public boolean incluirDepto() throws ClassNotFoundException, SQLException{
 		String sql = "INSERT INTO departamento (descDepto) ";
-			   sql += "VALUES (?)";	  
+			   sql += "VALUES (?)";	
+			   
 //		INSTANCIAR CLASSE CONEXAO    
 		Connection con = Conexao.conectar();	
-		
-
-
 		
 //		TRY/CATCH PARA A INCLUSAO DO DEPARTAMENTO
 		try {
@@ -38,7 +38,47 @@ public class Departamento {
 		return true;
 	}
 	
-//	LISTAR DEPARTAMENTOS CADASTRADOS
+/*
+ 	ALTERAR DEPARTAMENTO
+ */
+	public boolean alterarDepartamento() throws ClassNotFoundException {
+		String  sql = "UPDATE departamento ";
+				sql += "SET descdepto = ? ";
+				sql += "WHERE iddepto = ? ";
+		Connection con = Conexao.conectar();
+		try {
+			PreparedStatement stm = con.prepareStatement(sql);
+			stm.setString(1, this.getDescDepto());
+			stm.setInt(2, this.getIdDepto());
+			stm.execute();
+		} catch (SQLException e) {
+			System.out.println("Erro na alteração do departamento");
+			return false;
+		}
+		return true;
+	}	
+
+/*
+  	EXCLUIR DEPARTAMENTO
+ */
+	public boolean excluirDepartamento() throws ClassNotFoundException {
+		String  sql  = "DELETE FROM departamento ";
+				sql += "WHERE iddepto = ? ";
+		Connection con = Conexao.conectar();
+		try {
+			PreparedStatement stm = con.prepareStatement(sql);
+			stm.setInt(1, this.getIdDepto());
+			stm.execute();
+		} catch (SQLException e) {
+			System.out.println("Erro na exclusão do departamento");
+			return false;
+		}
+		return true;
+	}
+	
+/*
+ 	LISTAR DEPARTAMENTOS CADASTRADOS
+ */
 	public List<Departamento> listarDeptos() throws ClassNotFoundException{
 		
 //		CRIANDO LISTA 	
@@ -52,8 +92,10 @@ public class Departamento {
 		try {
 			PreparedStatement stm = con.prepareStatement(sql);
 			ResultSet rs = stm.executeQuery();
+			
 //			WHILE PARA FAZER A LISTAGEM DE TODOS OS DEPARTAMENTOS
 			while (rs.next()) {
+				
 //				INSTANCIAR CLASSE DEPARTAMENTO 
 				Departamento dep = new Departamento();
 				dep.setIdDepto(rs.getInt("idDepto"));
@@ -73,13 +115,10 @@ public class Departamento {
   	LISTAR UM DEPARTAMENTO CADASTRADO 
  */
 	public Departamento consultaDepto() throws ClassNotFoundException{
-		
-//		CRIANDO LISTA 	
-		Departamento dep1 = new Departamento();
-		dep1 = null;
 				
-//		INSTANCIAR CLASSE CONEXAO 
-		Connection con = Conexao.conectar();
+//		INSTANCIAR CLASSE CONEXAO E DEPARTAMENTO
+		Connection   con = Conexao.conectar();
+		Departamento dep = new Departamento();
 		
 //		COMANDO PARA LISTAR DEPARTAMENTOS
 		String sql = "SELECT descDepto FROM departamento where idDepto = ?";
@@ -88,13 +127,14 @@ public class Departamento {
 			stm.setInt(1, this.getIdDepto());
 			ResultSet rs = stm.executeQuery();
 			if (rs.next()) {
-				dep1.setDescDepto(rs.getString("descDepto"));
+				dep = new Departamento();
+				dep.setDescDepto(rs.getString("descDepto"));
 			}
 		} catch (SQLException e) {
 			System.out.println("Erro na consulta do departamento");
 			return null;
 		}
-		return dep1;
+		return dep;
 	
 	}
 	

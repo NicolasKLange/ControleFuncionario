@@ -12,7 +12,7 @@ public class Principal {
 	
 	    public static void main(String[] args) throws ClassNotFoundException, SQLException {
 	    	Departamento dep1 = new Departamento();
-	    	/*
+/*
 	    	//TESTE COM CONEXAO COM BANCO DE DADOS
 	        Connection con = Conexao.conectar();
 	        if (con ==  null) {
@@ -20,9 +20,9 @@ public class Principal {
 	        } else {
 	            System.out.println("Banco conectado com sucesso");
 	        }	        
-	        */
+*/
 	    	
-	    	/*
+/*
 //	    	INCLUIR DEPARTAMENTO
 	        
 	        dep1.setDescDepto(JOptionPane.showInputDialog("Informe o departamento"));
@@ -31,9 +31,10 @@ public class Principal {
 	        	System.out.println("Inclusão do departamento feito com sucesso!!");
 	        } else {
 	        	System.out.println("Erro na inclusão do departamento!!");
-	        }     
+	        }  
+*/	           
 	        
-	        
+/*	        
 //	        LISTAR TODOS DEPARTAMENTOS
 	        List<Departamento> lista = new ArrayList<>();
 	        lista = dep1.listarDeptos();
@@ -44,18 +45,41 @@ public class Principal {
 	        		System.out.println("Departamto: 0" + d.getIdDepto() + " | " + d.getDescDepto());
 				} else {
 					System.out.println("Departamto: " + d.getIdDepto() + " | " + d.getDescDepto());
-				}
-	        	
-	        	
+				}	        		        	
 	        }
-	        */
+*/
+	    	
 //	        LISTAR UM DEPARTAMENTO
+/*
 	    	dep1.setIdDepto(Integer.parseInt(JOptionPane.showInputDialog("Informe o ID do departamento")));
+	    	dep1 = dep1.consultaDepto();
 	    	if (dep1.consultaDepto() == null) {
 	    		System.out.println("Não encontrei o departamento");
 	    	} else {
-	    		System.out.println("Departamento " + dep1.getIdDepto() + " | " + dep1.getDescDepto());
+	    		System.out.println("Departamento: "  + dep1.getDescDepto());
 	    	}
+*/
+	    	
+	    	/*
+// 			ALTERAR DEPARTAMENTO
+			dep1.setIdDepto(Integer.parseInt(JOptionPane.showInputDialog("Informe o id do departamento")));
+			dep1.setDescDepto(JOptionPane.showInputDialog("Informe o novo departamento"));
+			if (dep1.alterarDepartamento()) {
+				System.out.println("Alteração do departamento efetuada com sucesso");
+			} else {
+				System.out.println("Erro ao alterar o departamento");
+			}
+*/
+/*
+ 
+// 			EXCLUIR DEPARTAMENTO
+			dep1.setIdDepto(Integer.parseInt(JOptionPane.showInputDialog("Informe o departamento")));
+			if (dep1.excluirDepartamento()) {
+				System.out.println("Exclusão do departamento efetuada com sucesso");
+			} else {
+				System.out.println("Erro ao excluir o departamento");
+			}
+*/
 	    }
 
 	}
