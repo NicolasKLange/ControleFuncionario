@@ -1,0 +1,7 @@
+package controlefuncionario;
+
+import java.sql.Connection;
+
+public class Funcionario {
+	
+}

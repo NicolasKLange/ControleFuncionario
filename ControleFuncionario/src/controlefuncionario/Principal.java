@@ -11,9 +11,13 @@ import javax.swing.JOptionPane;
 public class Principal {
 	
 	    public static void main(String[] args) throws ClassNotFoundException, SQLException {
+//	    	INSTANCIANDO CLASSES DEPARTAMENTO E FUNCIONÁRIO
 	    	Departamento dep1 = new Departamento();
+	    	Funcionario fun1 = new Funcionario(); 
+	    	
 /*
-	    	//TESTE COM CONEXAO COM BANCO DE DADOS
+//			TESTE COM CONEXAO COM BANCO DE DADOS
+ 
 	        Connection con = Conexao.conectar();
 	        if (con ==  null) {
 	            System.out.println("Nao deu certo");
@@ -21,6 +25,8 @@ public class Principal {
 	            System.out.println("Banco conectado com sucesso");
 	        }	        
 */
+	    	
+//			********************** DEPARTAMENTO ****************************	
 	    	
 /*
 //	    	INCLUIR DEPARTAMENTO
@@ -32,10 +38,39 @@ public class Principal {
 	        } else {
 	        	System.out.println("Erro na inclusão do departamento!!");
 	        }  
-*/	           
-	        
+*/	   
+	    	
+	    	
+/*
+// 			ALTERAR DEPARTAMENTO
+ 
+			dep1.setIdDepto(Integer.parseInt(JOptionPane.showInputDialog("Informe o id do departamento")));
+			dep1.setDescDepto(JOptionPane.showInputDialog("Informe o novo departamento"));
+//	        VERIFICANDO SE ESTÁ TUDO CERTO NA ALTERAÇÃO
+			if (dep1.alterarDepartamento()) {
+				System.out.println("Alteração do departamento efetuada com sucesso");
+			} else {
+				System.out.println("Erro ao alterar o departamento");
+			}
+*/
+	
+	    	
+/* 
+// 			EXCLUIR DEPARTAMENTO
+ 
+			dep1.setIdDepto(Integer.parseInt(JOptionPane.showInputDialog("Informe o departamento")));
+//	        VERIFICANDO SE ESTÁ TUDO CERTO NA EXLUSÃO
+			if (dep1.excluirDepartamento()) {
+				System.out.println("Exclusão do departamento efetuada com sucesso");
+			} else {
+				System.out.println("Erro ao excluir o departamento");
+			}
+*/	
+
+	    	
 /*	        
 //	        LISTAR TODOS DEPARTAMENTOS
+ 
 	        List<Departamento> lista = new ArrayList<>();
 	        lista = dep1.listarDeptos();
 //	        FOR PARA LISTAR TODOS DEPARTAMENTOS CADASTRADOS
@@ -48,9 +83,11 @@ public class Principal {
 				}	        		        	
 	        }
 */
+
 	    	
+/*	    	
 //	        LISTAR UM DEPARTAMENTO
-/*
+
 	    	dep1.setIdDepto(Integer.parseInt(JOptionPane.showInputDialog("Informe o ID do departamento")));
 	    	dep1 = dep1.consultaDepto();
 	    	if (dep1.consultaDepto() == null) {
@@ -60,26 +97,82 @@ public class Principal {
 	    	}
 */
 	    	
-	    	/*
-// 			ALTERAR DEPARTAMENTO
-			dep1.setIdDepto(Integer.parseInt(JOptionPane.showInputDialog("Informe o id do departamento")));
-			dep1.setDescDepto(JOptionPane.showInputDialog("Informe o novo departamento"));
-			if (dep1.alterarDepartamento()) {
-				System.out.println("Alteração do departamento efetuada com sucesso");
-			} else {
-				System.out.println("Erro ao alterar o departamento");
-			}
-*/
-/*
+	
+
+//			********************** FUNCIONÁRIO ****************************	    	
+	    	
+/*		    	
+//	    	INCLUIR FUNCIONARIO
+	        
+	    	fun1.setNomeFunc(JOptionPane.showInputDialog("Informe o nome do funcionário"));
+	    	fun1.setIdFunc(Integer.parseInt(JOptionPane.showInputDialog("Informe o ID do funcionário")));
+	    	fun1.setSalHora(Double.parseDouble(JOptionPane.showInputDialog("Informe o salário do funcionário")));    
+//	        VERIFICANDO SE ESTÁ TUDO CERTO NA INCLUSÃO
+	        if (fun1.incluirFunc()) {
+	        	System.out.println("Inclusão do funcionário feito com sucesso!!");
+	        } else {
+	        	System.out.println("Erro na inclusão do funcionário!!");
+	        }  	    
+*/	
+
+	    	
+/*	    	
+// 			ALTERAR FUNCIONARIO
  
-// 			EXCLUIR DEPARTAMENTO
-			dep1.setIdDepto(Integer.parseInt(JOptionPane.showInputDialog("Informe o departamento")));
-			if (dep1.excluirDepartamento()) {
-				System.out.println("Exclusão do departamento efetuada com sucesso");
+			fun1.setIdFunc(Integer.parseInt(JOptionPane.showInputDialog("Informe o id do funcionario")));
+			fun1.setNomeFunc(JOptionPane.showInputDialog("Informe o novo nome do funcionario"));
+			fun1.setIdFunc(Integer.parseInt(JOptionPane.showInputDialog("Informe o novo ID do departamento")));
+			fun1.setSalHora(Double.parseDouble(JOptionPane.showInputDialog("Informe o novo salário do funcionário")));
+//	        VERIFICANDO SE ESTÁ TUDO CERTO NA ALTERAÇÃO
+			if (fun1.alterarFuncionario()) {
+				System.out.println("Alteração do funcionario efetuada com sucesso");
 			} else {
-				System.out.println("Erro ao excluir o departamento");
+				System.out.println("Erro ao alterar o funcionario");
 			}
 */
+	    	
+	   
+/*	    	 
+// 			EXCLUIR FUNCIONARIO
+ 
+			fun1.setIdFunc(Integer.parseInt(JOptionPane.showInputDialog("Informe o funcionário")));
+//	        VERIFICANDO SE ESTÁ TUDO CERTO NA EXLUSÃO
+			if (fun1.excluirFuncionario()) {
+				System.out.println("Exclusão do funcionário efetuada com sucesso");
+			} else {
+				System.out.println("Erro ao excluir o funcionário");
+			}
+
+*/	
+	    	
+/*	        
+//	        LISTAR TODOS OS FUNCIONARIOS
+  
+	        List<Funcionario> listaF = new ArrayList<>();
+	        listaF = fun1.listarFunc();
+//	        FOR PARA LISTAR TODOS FUNCIONARIOS CADASTRADOS
+	        for (Funcionario f : listaF) {
+//	        	IF PARA DEIXAR A LISTA MAIS BONITAop
+	        	if (f.getIdDepto() < 10) {
+	        		System.out.println("Funcionario: 0" + f.getIdFunc() + " | " + f.getNomeFunc() + " | " + f.getIdDepto() + " | " + f.getSalHora());
+				} else {
+					System.out.println("Funcionario: 0" + f.getIdFunc() + " | " + f.getNomeFunc() + " | " + f.getIdDepto() + " | " + f.getSalHora());
+				}	        		        	
+	        }
+	        
+ */
+/*	   	
+//	        LISTAR UM FUNCIONARIO
+
+	    	fun1.setIdFunc(Integer.parseInt(JOptionPane.showInputDialog("Informe o ID do funcionário")));
+	    	fun1 = fun1.consultaFunc();
+	    	if (fun1.consultaFunc() == null) {
+	    		System.out.println("Não encontrei o funcionário");
+	    	} else {
+	    		System.out.println("Funcionario: "  + fun1.getNomeFunc() + " | " + fun1.getIdDepto() + " | " + fun1.getSalHora());
+	    	}
+*/
+
 	    }
 
 	}

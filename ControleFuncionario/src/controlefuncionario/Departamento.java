@@ -79,11 +79,9 @@ public class Departamento {
 /*
  	LISTAR DEPARTAMENTOS CADASTRADOS
  */
-	public List<Departamento> listarDeptos() throws ClassNotFoundException{
-		
+	public List<Departamento> listarDeptos() throws ClassNotFoundException{		
 //		CRIANDO LISTA 	
 		List<Departamento> listaDepto = new ArrayList<>();
-		
 //		INSTANCIAR CLASSE CONEXAO 
 		Connection con = Conexao.conectar();
 		
@@ -94,8 +92,7 @@ public class Departamento {
 			ResultSet rs = stm.executeQuery();
 			
 //			WHILE PARA FAZER A LISTAGEM DE TODOS OS DEPARTAMENTOS
-			while (rs.next()) {
-				
+			while (rs.next()) {				
 //				INSTANCIAR CLASSE DEPARTAMENTO 
 				Departamento dep = new Departamento();
 				dep.setIdDepto(rs.getInt("idDepto"));
