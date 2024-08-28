@@ -67,7 +67,7 @@ public class Principal {
 			}
 */	
 
-/*	    	
+	    	
 	        
 //	        LISTAR TODOS DEPARTAMENTOS
  
@@ -82,7 +82,7 @@ public class Principal {
 					System.out.println("Departamto: " + d.getIdDepto() + " | " + d.getDescDepto());
 				}	        		        	
 	        }
-*/
+
 
 	    	
 /*	    	
@@ -113,7 +113,7 @@ public class Principal {
 	        } else {
 	        	System.out.println("Erro na inclusão do funcionário!!");
 	        }  	    
-*/
+*/	
 
 	    	
 /*	    	
@@ -145,7 +145,7 @@ public class Principal {
 
 */	
 	    	
-/*       
+/*	        
 //	        LISTAR TODOS OS FUNCIONARIOS
   
 	        List<Funcionario> listaF = new ArrayList<>();
@@ -153,14 +153,14 @@ public class Principal {
 //	        FOR PARA LISTAR TODOS FUNCIONARIOS CADASTRADOS
 	        for (Funcionario f : listaF) {
 //	        	IF PARA DEIXAR A LISTA MAIS BONITAop
-	        	if (f.getIdFunc() < 10) {
+	        	if (f.getIdDepto() < 10) {
 	        		System.out.println("Funcionario: 0" + f.getIdFunc() + " | " + f.getNomeFunc() + " | " + f.getIdDepto() + " | " + f.getSalHora());
 				} else {
 					System.out.println("Funcionario: 0" + f.getIdFunc() + " | " + f.getNomeFunc() + " | " + f.getIdDepto() + " | " + f.getSalHora());
 				}	        		        	
 	        }
-*/	        
- 
+	        
+ */
 /*	   	
 //	        LISTAR UM FUNCIONARIO
 

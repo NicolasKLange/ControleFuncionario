@@ -101,7 +101,7 @@ public class Principal {
 
 //			********************** FUNCIONÁRIO ****************************	    	
 	    	
-/*		    	
+		    	
 //	    	INCLUIR FUNCIONARIO
 	        
 	    	fun1.setNomeFunc(JOptionPane.showInputDialog("Informe o nome do funcionário"));
@@ -113,7 +113,7 @@ public class Principal {
 	        } else {
 	        	System.out.println("Erro na inclusão do funcionário!!");
 	        }  	    
-*/
+	
 
 	    	
 /*	    	

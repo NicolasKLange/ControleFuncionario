@@ -113,7 +113,7 @@ public class Principal {
 	        } else {
 	        	System.out.println("Erro na inclusão do funcionário!!");
 	        }  	    
-*/
+*/	
 
 	    	
 /*	    	
@@ -145,7 +145,7 @@ public class Principal {
 
 */	
 	    	
-/*       
+        
 //	        LISTAR TODOS OS FUNCIONARIOS
   
 	        List<Funcionario> listaF = new ArrayList<>();
@@ -159,7 +159,7 @@ public class Principal {
 					System.out.println("Funcionario: 0" + f.getIdFunc() + " | " + f.getNomeFunc() + " | " + f.getIdDepto() + " | " + f.getSalHora());
 				}	        		        	
 	        }
-*/	        
+	        
  
 /*	   	
 //	        LISTAR UM FUNCIONARIO

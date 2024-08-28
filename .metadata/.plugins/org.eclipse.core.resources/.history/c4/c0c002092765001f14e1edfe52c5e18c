@@ -33,7 +33,7 @@ public class Funcionario {
 			stm.setDouble(3, this.getSalHora());
 			stm.execute();
 		} catch (SQLException e) {
-			System.out.println("Erro na inclusão do funcionário" + e.getMessage());
+			System.out.println("Erro na inclusão do funcionário");
 			return false;
 		}
 			   
@@ -56,7 +56,7 @@ public class Funcionario {
 			stm.setInt(4, this.getIdFunc());
 			stm.execute();
 		} catch (SQLException e) {
-			System.out.println("Erro na alteração do funcionario" + e.getMessage());
+			System.out.println("Erro na alteração do funcionario");
 			return false;
 		}
 		return true;
@@ -74,7 +74,7 @@ public class Funcionario {
 			stm.setInt(1, this.getIdFunc());
 			stm.execute();
 		} catch (SQLException e) {
-			System.out.println("Erro na exclusão do funcionário" + e.getMessage());
+			System.out.println("Erro na exclusão do funcionário");
 			return false;
 		}
 		return true;
@@ -110,7 +110,7 @@ public class Funcionario {
 				listaFunc.add(fun);
 			}
 		} catch (SQLException e) {
-			System.out.println("Erro em listar funcionarios" + e.getMessage());
+			System.out.println("Erro em listar funcionarios");
 			return null;
 		}
 //		RETORNA A LISTA DOS DEPARTAMENTOS
@@ -140,7 +140,7 @@ public class Funcionario {
 				fun.setSalHora(rs.getDouble("salHora"));
 			}
 		} catch (SQLException e) {
-			System.out.println("Erro na consulta do funcionario" + e.getMessage());
+			System.out.println("Erro na consulta do funcionario");
 			return null;
 		}
 		return fun;
